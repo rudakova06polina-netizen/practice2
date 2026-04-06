@@ -35,9 +35,9 @@ public class VarDemo {
 
         // === Рабочие примеры var ===
 
-        // TODO: Пример 1 — целое число
-        //   var number = 42;
-         //  System.out.println(number + " -> " + ((Object) number).getClass().getSimpleName());
+        // TODO: Пример 1 — целое числ
+        // var number = 42;
+        // System.out.println(number + " -> " + ((Object) number).getClass().getSimpleName());
 
         // TODO: Пример 2 — строка
           // var text = "Java";
