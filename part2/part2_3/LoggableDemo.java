@@ -7,7 +7,7 @@ package part2.part2_3;
  *
  * Ожидаемый вывод (время будет отличаться):
  *
- * Уровень логирования: INFO
+ * Уровень логироваcния: INFO
  *
  * [14:30:15] [DatabaseService] Подключение к jdbc:postgresql://localhost/mydb
  * [14:30:15] [DatabaseService] Подключение установлено

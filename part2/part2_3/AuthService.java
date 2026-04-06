@@ -18,7 +18,7 @@ public class AuthService implements Loggable {
     /**
      * Логирует попытку входа.
      *
-     * Алгоритм:
+     * Алгоритм:c
      *   1. Если success: log("Вход пользователя: " + username + " — успешно");
      *   2. Если не success: logError("Вход пользователя: " + username + " — отказано");
      */
