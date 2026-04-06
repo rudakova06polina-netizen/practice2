@@ -15,21 +15,20 @@ public class Developer extends Employee {
 
     public Developer(String name, double baseSalary, String language) {
         super(name, baseSalary);
-        // TODO: сохраните language в поле
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        this.language = language;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     /**
      * Бонус разработчика = baseSalary * 0.12.
-     *
+     *s
      * Пример: оклад 95000 → бонус = 11400.
      */
     @Override
     public double calculateBonus() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните baseSalary * 0.12
+        return baseSalary * 0.12;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }

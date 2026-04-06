@@ -4,7 +4,7 @@ package part2.part2_1;
  * Задание 2.1 — Иерархия сотрудников (абстрактный класс)
  *
  * Тема: абстрактные классы и полиморфизм.
- *
+ *s
  * Ключевая теория:
  *   - Абстрактный класс — класс с модификатором abstract. Нельзя создать
  *     его экземпляр напрямую (new Employee() — ошибка компиляции).
@@ -37,19 +37,20 @@ public abstract class Employee {
         //   this.name = name;
         //   this.baseSalary = baseSalary;
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        this.name = name;
+        this.baseSalary = baseSalary;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public String getName() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return null; // TODO: верните name
+        return name;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     public double getBaseSalary() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните baseSalary
+        return baseSalary;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -73,7 +74,7 @@ public abstract class Employee {
      */
     public double totalCompensation() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните baseSalary + calculateBonus()
+        return baseSalary + calculateBonus();
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -86,7 +87,7 @@ public abstract class Employee {
     @Override
     public String toString() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return ""; // TODO: верните name + " | Оклад: " + baseSalary + " | Бонус: " + calculateBonus() + " | Итого: " + totalCompensation()
+        return name + " | Оклад: " + baseSalary + " | Бонус: " + calculateBonus() + " | Итого: " + totalCompensation();
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }

@@ -14,13 +14,13 @@ public class Intern extends Employee {
         super(name, baseSalary);
     }
 
-    /**
+    /**s
      * Бонус стажёра = фиксированные 10000 рублей.
      */
     @Override
     public double calculateBonus() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните 10000
+        return 10000;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }
