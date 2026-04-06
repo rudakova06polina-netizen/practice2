@@ -2,7 +2,7 @@ package part2.part2_1;
 
 /**
  * Задание 2.1 — Менеджер (подкласс Employee)
- *
+ *s
  * Формула бонуса: baseSalary * 0.15 + teamSize * 5000
  *
  * Подсказка для конструктора: вызовите super(name, baseSalary),
@@ -15,9 +15,8 @@ public class Manager extends Employee {
 
     public Manager(String name, double baseSalary, int teamSize) {
         super(name, baseSalary);
-        // TODO: сохраните teamSize в поле
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        this.teamSize = teamSize;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -29,7 +28,7 @@ public class Manager extends Employee {
     @Override
     public double calculateBonus() {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните baseSalary * 0.15 + teamSize * 5000
+        return baseSalary * 0.15 + teamSize * 5000;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }
