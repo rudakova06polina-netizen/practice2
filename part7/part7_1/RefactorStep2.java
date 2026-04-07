@@ -27,48 +27,51 @@ public class RefactorStep2 {
         List<String> cities = Arrays.asList("Москва", "Берлин", "Токио", "Нью-Йорк", "Париж");
 
         // 1. Сортировка по длине
-        //   Можно ли заменить (a, b) -> Integer.compare(a.length(), b.length()) на ссылку?
-        //   Подсказка: нет, потому что вызывается a.length() — это не прямой вызов одного метода.
-        //   Используйте Comparator.comparingInt(String::length)
+        //   Нельзя заменить на простую ссылку — вызывается a.length(), это не прямой вызов одного метода.
+        //   Используем Comparator.comparingInt с ссылкой String::length
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // cities.sort(Comparator.comparingInt(String::length));
+        cities.sort(Comparator.comparingInt(String::length));
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
 
         // 2. Вывод каждого элемента
         //   city -> System.out.println(city) → System.out::println
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // cities.forEach(System.out::println);
+        cities.forEach(System.out::println);
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
 
         // 3. Преобразование в верхний регистр
         //   s -> s.toUpperCase() → String::toUpperCase
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // Function<String, String> toUpper = String::toUpperCase;
+        Function<String, String> toUpper = String::toUpperCase;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
 
         // 4. Проверка длины > 5
-        //   Можно ли заменить s -> s.length() > 5 на ссылку?
-        //   Ответ: нет — это не вызов одного метода, а выражение с операцией сравнения.
+        //   Нельзя заменить на ссылку — это выражение с операцией сравнения (> 5), а не вызов одного метода.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // Predicate<String> isLong = s -> s.length() > 5;  // оставляем лямбду
+        Predicate<String> isLong = s -> s.length() > 5;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
 
         // 5. Формирование строки с восклицательным знаком
-        //   Можно ли заменить s -> s + "!" на ссылку?
-        //   Ответ: нет — это конкатенация, а не вызов метода.
+        //   Нельзя заменить на ссылку — это конкатенация (s + "!"), а не вызов метода.
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // Function<String, String> exclaim = s -> s + "!";  // оставляем лямбду
+        Function<String, String> exclaim = s -> s + "!";
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
 
         // 6. Создание нового списка
         //   () -> new ArrayList<>() → ArrayList::new
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        // Supplier<List<String>> listFactory = ArrayList::new;
+        Supplier<List<String>> listFactory = ArrayList::new;
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
 
-        // Использование (скопируйте из RefactorStep1 и адаптируйте)
+        // Использование
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        List<String> result = listFactory.get();
+        for (String city : cities) {
+            if (isLong.test(city)) {
+                result.add(toUpper.apply(city));
+            }
+        }
+        System.out.println("Длинные города: " + result);
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }
