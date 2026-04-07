@@ -22,25 +22,25 @@ public class HRSystem {
         System.out.println(emp.name);            // Строка A
         //System.out.println(emp.age);             // Строка B
         //System.out.println(emp.salary);          // Строка C
-       // System.out.println(emp.password);        // Строка D
+        // System.out.println(emp.password);        // Строка D
         System.out.println(emp.getRole());       // Строка E
-       // emp.promote(5000);                       // Строка F
-       // emp.printSummary();                      // Строка G
-       // emp.validatePassword("secret");          // Строка H
-   /*
-Для каждой строки (A–H) определите: скомпилируется ли она? Если нет — укажите причину (модификатор + пакет).
-Заполните таблицу:
-Строка	Компилируется?	Почему?
-A
-B
-C
-D
-E
-F
-G
-H
+        // emp.promote(5000);                       // Строка F
+        // emp.printSummary();                      // Строка G
+        // emp.validatePassword("secret");          // Строка H
 
-    */
+        /*
+        Строка | Компилируется? | Причина
+        A      | Да             | name — public, поэтому доступен из любого пакета без ограничений
+        B      | Нет            | age — protected. В другом пакете доступен только наследникам, а HRSystem не наследует Employee
+        C      | Нет            | salary — package-private. Виден только внутри пакета company.core, а HRSystem в company.app
+        D      | Нет            | password — private. Доступен исключительно внутри класса Employee
+        E      | Да             | getRole() — public, поэтому виден отовсюду, включая другие пакеты
+        F      | Нет            | promote() — protected. Требует либо тот же пакет, либо наследование, чего нет у HRSystem
+        G      | Нет            | printSummary() — package-private. Ограничен пакетом company.core, а HRSystem в company.app
+        H      | Нет            | validatePassword() — private. Доступ есть только у методов самого класса Employee
 
+        ИТОГ: из восьми строк компилируются только A и E.
+        Причина — только public-члены доступны из другого пакета при отсутствии наследования.
+        */
     }
 }
