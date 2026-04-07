@@ -85,7 +85,7 @@ $8 ==> "HELLO WORLD!"
 
 ---
 
-## Задание 9.3: Сравнение EnumSet и HashSet
+## Задание 9.3: Сравнение EnumSet и HashSet.
 
 ### Команды
 
