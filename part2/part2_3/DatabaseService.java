@@ -18,7 +18,7 @@ public class DatabaseService implements Loggable {
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
-    /**c
+    /**
      * Подключается к базе данных и логирует процесс.
      *
      * Алгоритм:
